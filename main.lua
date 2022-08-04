@@ -46,21 +46,21 @@ local function drawGame()
 
 	--for every circle, do collision with screen edges
 	for _, c in ipairs(circles) do
-        c.x += c.vx;
-        c.y += c.vy;
-        if c.x < 0 then
-            c.vx = math.abs(c.vx);
+        	c.x += c.vx;
+        	c.y += c.vy;
+        	if c.x < 0 then
+        	    c.vx = math.abs(c.vx);
 		end
-        if c.x > width then
-            c.vx = -math.abs(c.vx);
+        	if c.x > width then
+        	    c.vx = -math.abs(c.vx);
 		end
-        if c.y < 0 then
-           c.vy = math.abs(c.vy);
+        	if c.y < 0 then
+        	   c.vy = math.abs(c.vy);
 		end
-        if c.y > height then
-            c.vy = -math.abs(c.vy);
+        	if c.y > height then
+        	    c.vy = -math.abs(c.vy);
 		end
-    end
+    	end
 
 	--only update a random sampling of the screen's pixels (procedural dithering)
 	for i=0, 2500, 1 do
